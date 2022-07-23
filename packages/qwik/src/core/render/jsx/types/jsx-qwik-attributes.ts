@@ -192,7 +192,8 @@ export interface onCustomQrl {
 /**
  * @public
  */
-export interface QwikEvents extends on$, onParent$, onCustom$ {
+export type QwikEvents = on$ & onParent$ & onCustom$;
+// export interface QwikEvents extends on$, onParent$, onCustom$ {
   // Clipboard Events
   // onCopy$?: NativeEventHandler<ClipboardEvent>;
   // onCopyCapture$?: NativeEventHandler<ClipboardEvent>;
@@ -325,7 +326,7 @@ export interface QwikEvents extends on$, onParent$, onCustom$ {
   // [key: `on${string}$`]: NativeEventHandler<any> | undefined;
   // [key: `document:on${string}$`]: NativeEventHandler<any> | undefined;
   // [key: `window:on${string}$`]: NativeEventHandler<any> | undefined;
-}
+// }
 
 interface CSSProperties {
   [key: string]: string | number;
@@ -336,10 +337,11 @@ interface CSSProperties {
  */
 export type JSXTagName = keyof HTMLElementTagNameMap | Omit<string, keyof HTMLElementTagNameMap>;
 
+export type ComponentBaseEvents = onParent$ & onParentQrl
 /**
  * @public
  */
-export interface ComponentBaseProps extends onParent$, onParentQrl, PreventDefault {
+export interface ComponentBaseProps extends ComponentBaseEvents, PreventDefault {
   class?: string | { [className: string]: boolean };
   className?: string | undefined;
   style?: CSSProperties | string | undefined;
