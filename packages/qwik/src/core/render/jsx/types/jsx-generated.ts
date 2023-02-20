@@ -488,18 +488,14 @@ export interface IframeHTMLAttributes<T> extends HTMLAttributes<T> {
   allow?: string | undefined;
   allowFullScreen?: boolean | undefined;
   allowTransparency?: boolean | undefined;
-  /** @deprecated Deprecated */
   frameBorder?: number | string | undefined;
   height?: number | string | undefined;
   loading?: 'eager' | 'lazy' | undefined;
-  /** @deprecated Deprecated */
   marginHeight?: number | undefined;
-  /** @deprecated Deprecated */
   marginWidth?: number | undefined;
   name?: string | undefined;
   referrerPolicy?: HTMLAttributeReferrerPolicy | undefined;
   sandbox?: string | undefined;
-  /** @deprecated Deprecated */
   scrolling?: string | undefined;
   seamless?: boolean | undefined;
   src?: string | undefined;
