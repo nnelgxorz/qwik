@@ -532,3 +532,13 @@ export interface Zod {
   <T extends z.Schema>(schema: T): Promise<T>;
   <T extends z.Schema>(schema: (z: typeof import('zod').z) => T): Promise<T>;
 }
+
+/**
+ * @alpha
+ */
+export type ActionInput<T> = T extends Action<any, infer INPUT, any> ? INPUT : never;
+
+/**
+ * @alpha
+ */
+export type Zod$<T> = T extends ZodReturn ? z.infer<Awaited<T>> : never;
